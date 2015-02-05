@@ -20,7 +20,7 @@ html {
 
 body{
   font-family: $roboto;
-  background: url('../img/wanderlust-2.jpg') no-repeat center fixed;
+  background: url('../img/wanderlust.jpg') no-repeat center fixed;
   background-size: cover;
   @include zero;
   // Hides close button if there is no js
@@ -47,6 +47,16 @@ h1{
   letter-spacing: 6px;
   text-align: center;
   padding-top: 20rem;
+}
+
+.small-border{
+    display: block;
+    width: 65px;
+    height: 5px;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: -1rem;
+    margin-bottom: 10px;
 }
 
 .toggle-btn{
@@ -116,7 +126,7 @@ h1{
       height: 100%;
       position: relative;
       transform: translateX(0);
-      @include ease(all, 300ms, ease-in-out);
+      @include ease(all, 500ms, ease-in-out);
     } // .sliding canvas
   
     &[data-state="slide-open"] .sliding-canvas{
