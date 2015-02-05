@@ -19,7 +19,9 @@ html {
 
 
 body{
-  font-family: sans-serif;
+  font-family: $roboto;
+  background: url('../img/wanderlust-2.jpg') no-repeat center fixed;
+  background-size: cover;
   @include zero;
   // Hides close button if there is no js
   &.noscript .close-btn,
@@ -33,6 +35,20 @@ header {
   position: relative;
 }
 
+main{
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+h1{
+  color: $text-color;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  text-align: center;
+  padding-top: 20rem;
+}
+
 .toggle-btn{
   position: absolute;
   right: 1em;
@@ -41,6 +57,11 @@ header {
 
 .navigation ul{
   @include zero;
+  margin-top: 6em;
+  margin-right: 1.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: .9rem;
   li{
     list-style-type: none;
     &:first-child a{
@@ -49,10 +70,14 @@ header {
     a{
       display: block;
       padding: .5em 1em;
-      text-align: center;
+      text-align: right;
       color: $text-color;
       /*border-bottom: 1px solid $light-grey;*/
       text-decoration: none;
+      @include ease(all, 300ms, ease-in-out);
+      &:hover{
+        color: $hover;
+      }
     }
   } // li
 } // .navigation ul 
@@ -62,16 +87,24 @@ header {
   color: $text-color;
   height: 40px;
   width: 40px;
+  @include ease(all, 300ms, ease-in-out);
+  &:hover{
+    color: $hover;
+  }
   span{
     @include hide-text;
   }
 }
 
 .close-btn{
-  margin: 1em;
+  position: absolute;
+  right: 1em;
+  top: 0;
+  margin-top:0;
 }
 
-@media only screen and (max-width: 60em){
+
+@media only screen and (max-width: 90em){
 
   .site-wrapper{
     position: relative;
@@ -106,7 +139,7 @@ header {
   }// .slider-menu
 } // @media
 
-@media only screen and (min-width: 60em){
+@media only screen and (min-width: 90em){
   .toggle-btn,
   .close-btn{
     display: none;
@@ -117,4 +150,3 @@ body.noscript .slide-menu{
   position: static;
   right: auto;
 }
-
